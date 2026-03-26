@@ -51,7 +51,7 @@ virgo-trader-download-data --help
 
 ## 模型
 
-- 预训练模型默认放在 `models/bundled/`（本仓库不随附模型权重文件 `*.zip`）。
+- 预训练模型位于 `models/bundled/`，用于评估/回测。
 - 预训练模型的训练表现与回撤等统计：`models/bundled/sse50_pool_best_total_return_2024_metrics.json`。
 - 训练输出位于 `models/user/`。
 - UI 仅允许删除 `models/user/` 下的模型，避免误删预训练模型。
