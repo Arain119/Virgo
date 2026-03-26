@@ -460,9 +460,7 @@ class MainApp(QObject):
         model_path = resolved_model_path
 
         if not is_user_model_path(model_path):
-            StyledMessageBox.warning(
-                self.dashboard, "禁止删除", "该模型为内置只读模型，无法删除。"
-            )
+            StyledMessageBox.warning(self.dashboard, "禁止删除", "该模型为内置只读模型，无法删除。")
             return
         if not model_path.exists():
             StyledMessageBox.warning(self.dashboard, "模型缺失", f"未找到模型文件：{model_name}")
