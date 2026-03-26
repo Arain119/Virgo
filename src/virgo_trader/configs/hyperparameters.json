@@ -1,0 +1,89 @@
+{
+    "training": {
+        "commission_rate": 0.0003,
+        "slippage": 0.0001,
+        "stock_code": "600519",
+        "start_date": "20210101",
+        "end_date": "20230101",
+        "log_interval": 20,
+        "save_model_interval": 100,
+        "max_episodes": 1000,
+        "max_timesteps": 500,
+        "update_timestep": 2048,
+        "window_size": 30
+    },
+    "simulation": {
+        "stock_code": "600519",
+        "start_date": "20230101",
+        "end_date": "20230601"
+    },
+    "ppo_agent": {
+        "K_epochs": 20,
+        "eps_clip": 0.15,
+        "gamma": 0.997,
+        "lr": 0.0001,
+        "batch_size": 64,
+        "target_kl": 0.01,
+        "vf_coef": 0.5,
+        "ent_coef": 0.01,
+        "max_grad_norm": 0.5,
+        "gae_lambda": 0.95
+    },
+    "reward": {
+        "weights": {
+            "dsr": 0.35,
+            "simple_return": 0.2,
+            "excess_return": 0.15,
+            "drawdown": 0.15,
+            "trend_consistency": 0.1,
+            "correlation_penalty": 0.1,
+            "idle": 1.0
+        },
+        "component_clip": 10.0,
+        "reward_clip": 10.0,
+        "drawdown_threshold": -0.05,
+        "drawdown_scale": 2.0,
+        "idle_penalty_scale": -0.0005,
+        "idle_penalty_steps": 30,
+        "corr_window_min_std": 1e-09,
+        "dsr_min_std": 1e-08,
+        "benchmark_log_return_floor": -0.999999,
+        "positive_corr_only": true
+    },
+    "model_architecture": {
+        "default_agent_type": "multiscale_cnn",
+        "cnn": {
+            "features_dim": 128
+        },
+        "transformer": {
+            "features_dim": 128,
+            "d_model": 128,
+            "n_heads": 4,
+            "num_layers": 2,
+            "ff_dim": 256,
+            "dropout_rate": 0.1,
+            "pooling": "cls",
+            "positional_encoding": "learned",
+            "use_relative_position_bias": true,
+            "relative_attention_buckets": 32,
+            "relative_attention_max_distance": 256
+        },
+        "cross_attention": {
+            "features_dim": 128,
+            "cnn_dim": 128,
+            "transformer_dim": 128,
+            "cross_dim": 128,
+            "cross_heads": 4,
+            "transformer_kwargs": {
+                "depth": 2,
+                "ff_dim": 256,
+                "dropout": 0.1,
+                "pooling": "cls",
+                "positional_encoding": "learned",
+                "use_relative_position_bias": true,
+                "relative_attention_buckets": 32,
+                "relative_attention_max_distance": 256
+            }
+        }
+    }
+}

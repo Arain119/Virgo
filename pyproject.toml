@@ -1,0 +1,95 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "virgo-trader"
+version = "0.1.0"
+description = "Research-oriented quantitative trading project based on deep reinforcement learning (PPO)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+dependencies = [
+  "numpy>=1.26.4",
+  "pandas>=2.3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7",
+  "ruff>=0.4.0",
+]
+ui = [
+  "PyQt6>=6.7.0",
+  "PyQt6-WebEngine>=6.7.0",
+  "pyqtgraph>=0.13.7",
+  "python-docx>=1.1.2",
+  "pymdown-extensions>=10.16.1",
+  "Pygments>=2.15.1",
+  "aiohttp>=3.12.14",
+]
+news = [
+  "aiohttp>=3.12.14",
+  "beautifulsoup4>=4.12.3",
+  "requests>=2.31.0",
+]
+train = [
+  "stable-baselines3[extra]>=2.7.0",
+  "optuna>=4.1.0",
+  "akshare>=1.17.24",
+  "pandas-ta>=0.3.14b0",
+]
+
+[project.scripts]
+virgo-trader-ui = "virgo_trader.main:main"
+virgo-trader-train = "virgo_trader.train:main"
+virgo-trader-optimize = "virgo_trader.training.optimize:main"
+virgo-trader-news = "virgo_trader.news.cli:main"
+virgo-trader-backtest = "virgo_trader.cli.backtest:main"
+virgo-trader-pipeline = "virgo_trader.cli.pipeline:main"
+virgo-trader-download-data = "virgo_trader.cli.download_data:main"
+
+[tool.setuptools]
+include-package-data = true
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["virgo_trader*"]
+exclude = ["paper*", "tests*"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+exclude = [
+  ".git",
+  ".pytest_cache",
+  ".ruff_cache",
+  ".tmp",
+  "cache",
+  "ppo_tensorboard",
+  "reports",
+  # The `paper/` tree contains research/analysis scripts that we still want to lint
+  # for basic correctness (E/F/W/B/I). We avoid excluding it so it is part of the
+  # default quality checks.
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "N"]
+ignore = [
+  # Long lines are common in UI code, prompts, and CLI help text.
+  "E501",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Entry modules intentionally set env vars / sys.path before importing heavy dependencies.
+"src/virgo_trader/main.py" = ["E402", "I001", "N802"]
+# Research scripts often set env vars / sys.path before importing dependencies.
+"paper/**/*.py" = ["E402"]
+# Qt overrides must follow the framework's camelCase method names.
+"src/virgo_trader/ui/**/*.py" = ["N802"]

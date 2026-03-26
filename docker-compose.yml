@@ -1,0 +1,17 @@
+services:
+  virgo-train:
+    build:
+      context: .
+    image: virgo-trader:cu118
+    command: ["python", "-m", "virgo_trader.train", "--stock_pool", "sse50", "--episodes", "40"]
+    gpus: all
+    environment:
+      - VIRGO_DATA_DIR=/data/virgo
+      - VIRGO_PERF=1
+      - OMP_NUM_THREADS=1
+      - MKL_NUM_THREADS=1
+      - OPENBLAS_NUM_THREADS=1
+      - NUMEXPR_NUM_THREADS=1
+    volumes:
+      - ./data:/data/virgo
+    shm_size: "2gb"

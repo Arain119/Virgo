@@ -1,0 +1,17 @@
+.git
+.gitignore
+Virgo.zip
+*.zip
+*.rar
+*.doc
+*.docx
+reports/
+ppo_tensorboard/
+rl_quant_trader/trader_data.db
+rl_quant_trader/data/cache/
+__pycache__/
+**/__pycache__/
+.pytest_cache/
+.venv/
+venv/
+data/

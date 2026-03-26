@@ -1,0 +1,17 @@
+include LICENSE
+include README.md
+include requirements.txt
+
+# Package data used by the desktop UI and CLI entrypoints.
+recursive-include src/virgo_trader/configs *.json
+recursive-include src/virgo_trader/ui/icons *.svg
+recursive-include src/virgo_trader/ui/styles *.qss
+recursive-include src/virgo_trader/ui/styles/icons *.svg
+
+# Keep distribution archives small; bundled checkpoints and paper assets are shipped via the repo, not PyPI artifacts.
+prune models
+prune news
+prune paper
+prune tests
+
+global-exclude __pycache__ *.py[cod] .pytest_cache .ruff_cache

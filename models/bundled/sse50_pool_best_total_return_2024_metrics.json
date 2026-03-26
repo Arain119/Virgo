@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-03-23T16:07:52",
+  "train_window": {
+    "start": "20220101",
+    "end": "20240101"
+  },
+  "backtest_window": {
+    "start": "20240101",
+    "end": "20250101"
+  },
+  "models": [
+    {
+      "model_name": "PPO_SSE50_POOL_CROSS_ATTENTION_BASE_20220101_20240101_SEED3",
+      "model_file": "models/bundled/SSE50_POOL_best_total_return_2024/PPO_SSE50_POOL_CROSS_ATTENTION_BASE_20220101_20240101_SEED3.zip",
+      "backbone": "cross_attention",
+      "sentiment": "base",
+      "seed": 3,
+      "num_timesteps": 25600,
+      "max_drawdown_pct": -6.95,
+      "max_drawdown_source": "computed_backtest_2024"
+    },
+    {
+      "model_name": "PPO_SSE50_POOL_CROSS_ATTENTION_DEEPSEEK_20220101_20240101_SEED13",
+      "model_file": "models/bundled/SSE50_POOL_best_total_return_2024/PPO_SSE50_POOL_CROSS_ATTENTION_DEEPSEEK_20220101_20240101_SEED13.zip",
+      "backbone": "cross_attention",
+      "sentiment": "deepseek",
+      "seed": 13,
+      "num_timesteps": 25600,
+      "max_drawdown_pct": -6.0,
+      "max_drawdown_source": "paper_table_5-2"
+    },
+    {
+      "model_name": "PPO_SSE50_POOL_CROSS_ATTENTION_FOMALHAUT_20220101_20240101_SEED8",
+      "model_file": "models/bundled/SSE50_POOL_best_total_return_2024/PPO_SSE50_POOL_CROSS_ATTENTION_FOMALHAUT_20220101_20240101_SEED8.zip",
+      "backbone": "cross_attention",
+      "sentiment": "fomalhaut",
+      "seed": 8,
+      "num_timesteps": 40960,
+      "max_drawdown_pct": -7.92,
+      "max_drawdown_source": "paper_table_5-2"
+    },
+    {
+      "model_name": "PPO_SSE50_POOL_MULTISCALE_CNN_BASE_20220101_20240101_SEED13",
+      "model_file": "models/bundled/SSE50_POOL_best_total_return_2024/PPO_SSE50_POOL_MULTISCALE_CNN_BASE_20220101_20240101_SEED13.zip",
+      "backbone": "multiscale_cnn",
+      "sentiment": "base",
+      "seed": 13,
+      "num_timesteps": 12800,
+      "max_drawdown_pct": -7.43,
+      "max_drawdown_source": "computed_backtest_2024"
+    },
+    {
+      "model_name": "PPO_SSE50_POOL_MULTISCALE_CNN_DEEPSEEK_20220101_20240101_SEED9",
+      "model_file": "models/bundled/SSE50_POOL_best_total_return_2024/PPO_SSE50_POOL_MULTISCALE_CNN_DEEPSEEK_20220101_20240101_SEED9.zip",
+      "backbone": "multiscale_cnn",
+      "sentiment": "deepseek",
+      "seed": 9,
+      "num_timesteps": 23040,
+      "max_drawdown_pct": -8.09,
+      "max_drawdown_source": "paper_table_5-2"
+    },
+    {
+      "model_name": "PPO_SSE50_POOL_MULTISCALE_CNN_FOMALHAUT_20220101_20240101_SEED10",
+      "model_file": "models/bundled/SSE50_POOL_best_total_return_2024/PPO_SSE50_POOL_MULTISCALE_CNN_FOMALHAUT_20220101_20240101_SEED10.zip",
+      "backbone": "multiscale_cnn",
+      "sentiment": "fomalhaut",
+      "seed": 10,
+      "num_timesteps": 23040,
+      "max_drawdown_pct": -9.12,
+      "max_drawdown_source": "paper_table_5-2"
+    },
+    {
+      "model_name": "PPO_SSE50_POOL_TRANSFORMER_BASE_20220101_20240101_SEED8",
+      "model_file": "models/bundled/SSE50_POOL_best_total_return_2024/PPO_SSE50_POOL_TRANSFORMER_BASE_20220101_20240101_SEED8.zip",
+      "backbone": "transformer",
+      "sentiment": "base",
+      "seed": 8,
+      "num_timesteps": 17920,
+      "max_drawdown_pct": -5.33,
+      "max_drawdown_source": "paper_table_5-2"
+    },
+    {
+      "model_name": "PPO_SSE50_POOL_TRANSFORMER_DEEPSEEK_20220101_20240101_SEED13",
+      "model_file": "models/bundled/SSE50_POOL_best_total_return_2024/PPO_SSE50_POOL_TRANSFORMER_DEEPSEEK_20220101_20240101_SEED13.zip",
+      "backbone": "transformer",
+      "sentiment": "deepseek",
+      "seed": 13,
+      "num_timesteps": 23040,
+      "max_drawdown_pct": -7.78,
+      "max_drawdown_source": "paper_table_5-2"
+    },
+    {
+      "model_name": "PPO_SSE50_POOL_TRANSFORMER_FOMALHAUT_20220101_20240101_SEED13",
+      "model_file": "models/bundled/SSE50_POOL_best_total_return_2024/PPO_SSE50_POOL_TRANSFORMER_FOMALHAUT_20220101_20240101_SEED13.zip",
+      "backbone": "transformer",
+      "sentiment": "fomalhaut",
+      "seed": 13,
+      "num_timesteps": 38400,
+      "max_drawdown_pct": -8.52,
+      "max_drawdown_source": "paper_table_5-2"
+    }
+  ]
+}

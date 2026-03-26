@@ -1,0 +1,70 @@
+# Large local archives / research artifacts
+A12_*
+/*.zip
+/*.tar.gz
+/*.rar
+/*.7z
+/*.doc
+/*.docx
+/*.ppt
+/*.pptx
+/*.xls
+/*.xlsx
+/*.pdf
+/virgo_complete/
+/agent_reports/
+/artifacts/
+/*.bak
+/paper_content.txt
+/report_comparison.txt
+/training_sessions.txt
+/*_analysis.txt
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+
+# Packaging/build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Logs / tensorboard
+*.log
+ppo_tensorboard/
+
+# Runtime state & databases
+*.db
+/trader_data.db
+/chat_history.json
+config/.deps_state.json
+config/user_config.json
+
+# Generated models / outputs
+models/user/
+models/bundled/**/*.zip
+reports/
+news/cache/
+news/data/
+news/logs/
+news/state/
+news/data/exports/
+
+# Soft-copyright (CN) submission deliverables (docx exports, screenshot packs, etc.)
+deliverables/
+# Soft-copyright helper scripts are kept locally and not part of the OSS repo.
+tools/softcopyright/
+
+# Local paper/manuscripts (kept locally, not part of the OSS repo)
+paper/
