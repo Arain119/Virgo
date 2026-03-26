@@ -110,7 +110,7 @@ virgo-trader-news --mode historical --start 2024-01-01 --end 2024-12-31
 情绪标注（高级用法）：
 
 - 云端 DeepSeek（SiliconFlow）：需要环境变量 `SILICONFLOW_API_KEY` 或命令行参数 `--api-key`。
-- 本地 Ollama（Fomalhaut）：默认 `http://127.0.0.1:11434`。
+- 本地 Ollama（Fomalhaut）：默认 `http://127.0.0.1:11434`；模型参考：https://www.modelscope.cn/models/Arain119/Fomalhaut
 
 对应脚本位于 `src/virgo_trader/news/label_with_deepseek.py` 与 `src/virgo_trader/news/label_with_fomalhaut.py`，可用 `python -m ... --help` 查看参数。
 
@@ -179,7 +179,7 @@ pytest -q
 
 ## 仓库内容说明
 
-本公开仓库仅包含可公开的核心源代码、测试、配置与预训练模型文件。论文与软著材料不在本仓库中维护。
+本公开仓库仅包含核心源代码、测试、配置与预训练模型文件。
 
 ## 许可证
 
